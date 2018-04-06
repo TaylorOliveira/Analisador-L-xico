@@ -1,0 +1,9 @@
+i=20
+if(i<10):
+	while j < 100:
+		print "olá mundo"
+		j+=1
+	return ("é maior")
+else:
+	return ("é menor")
+

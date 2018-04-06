@@ -39,19 +39,19 @@ class AnalisadorLexico():
                print(carac_atual)
             elif self.averiguar_digito(carac_atual):
                 string_temp = carac_atual
-                # print(carac_atual)
-                i += 1
-                carac_atual = entrada[i]
-                while self.averiguar_digito(carac_atual) and (i + 1 < tamanho_linha):
-                    string_temp += carac_atual
-                    # print(string_temp)
-                    i += 1
+                print(carac_atual)
+                if(i+1) < tamanho_linha:
                     carac_atual = entrada[i]
-                    print(string_temp)
-                self.analise_lexica_correta = True
-                if not self.averiguar_digito(carac_atual):
-                    i -= 1
-                i+=1
+                    while self.averiguar_digito(carac_atual) and (i + 1 < tamanho_linha):
+                        string_temp += carac_atual
+                        # print(string_temp)
+                        i += 1
+                        carac_atual = entrada[i]
+                        # print(string_temp)
+                    self.analise_lexica_correta = True
+                    if not self.averiguar_digito(carac_atual):
+                        i -= 1
+            i+=1
         if self.analise_lexica_correta:
             return self.analise_lexica_correta
         return False
